@@ -1,0 +1,25 @@
+skip_tags: true
+
+environment:
+  PYTHON: C:\\Python27-x64
+  BUILD_DIR: "%APPVEYOR_BUILD_FOLDER%\\build"
+
+matrix:
+  - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    configuration: Debug
+
+install:
+  - set PATH=%PYTHON%;%PYTHON%\\Scripts\\;%PATH%
+  - pip install conan
+  - conan user
+
+before_build:
+    - cd %BUILD_DIR%
+    - cmake .. -G "Visual Studio 15 2017 Win64" -D CMAKE_BUILD_TYPE=%CONFIGURATION%
+
+build_script:
+    - cmake . --build
+
+test_script:
+    - ctest -C %CONFIGURATION%
+
