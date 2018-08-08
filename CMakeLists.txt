@@ -17,12 +17,10 @@ if(USE_CONAN)
     include(conan.cmake)
     conan_check(REQUIRED)
 
-    conan_add_remote(
-        NAME kysa
-        URL https://conan.kysa.me
-    )
-
     conan_cmake_run(
+        REQUIRES boost/1.67.0@conan/stable
+        BASIC_SETUP
+        NO_OUTPUT_DIRS
     )
 
 endif()

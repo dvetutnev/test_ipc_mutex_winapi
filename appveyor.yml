@@ -4,9 +4,9 @@ environment:
   PYTHON: C:\\Python27-x64
   BUILD_DIR: "%APPVEYOR_BUILD_FOLDER%\\build"
 
-matrix:
-  - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-    configuration: Debug
+  matrix:
+    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+      configuration: Debug
 
 install:
   - set PATH=%PYTHON%;%PYTHON%\\Scripts\\;%PATH%
