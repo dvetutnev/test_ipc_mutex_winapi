@@ -2,8 +2,8 @@
 # Dmitriy Vetutnev, 2018
 
 
+cmake_minimum_required(VERSION 3.0)
 project(test_ipc_mutex_winapi CXX)
-cmake_minimun_required(VERSION 3.0)
 
 
 if(NOT WIN32)
