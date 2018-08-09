@@ -10,8 +10,11 @@ environment:
 
 install:
   - set PATH=%PYTHON%;%PYTHON%\\Scripts\\;%PATH%
+
   - pip install conan
   - conan user
+
+  - mkdir %BUILD_DIR%
 
 before_build:
     - cd %BUILD_DIR%
