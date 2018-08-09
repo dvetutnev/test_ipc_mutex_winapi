@@ -21,6 +21,7 @@ if(USE_CONAN)
         REQUIRES boost/1.67.0@conan/stable
         BASIC_SETUP
         NO_OUTPUT_DIRS
+        BUILD outdated
     )
 
 endif()
@@ -33,7 +34,7 @@ add_definitions(-DBOOST_ERROR_CODE_HEADER_ONLY)
 enable_testing()
 
 
-add_excutable(simple simple.cpp)
+add_executable(simple simple.cpp)
 target_link_libraries(simple
     Boost::boost
     Boost::disable_autolinking
