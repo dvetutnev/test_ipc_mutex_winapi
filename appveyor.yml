@@ -18,7 +18,7 @@ install:
 
 before_build:
     - cd %BUILD_DIR%
-    - cmake .. -G "Visual Studio 15 2017 Win64" -D CMAKE_BUILD_TYPE=%CONFIGURATION%
+    - cmake -G "Visual Studio 15 2017 Win64" -DCMAKE_BUILD_TYPE=%CONFIGURATION% %APPVEYOR_BUILD_FOLDER%
 
 build_script:
     - cmake . --build
