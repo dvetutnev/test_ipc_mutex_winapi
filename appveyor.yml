@@ -21,8 +21,8 @@ before_build:
     - cmake -G "Visual Studio 15 2017 Win64" -DCMAKE_BUILD_TYPE=%CONFIGURATION% %APPVEYOR_BUILD_FOLDER%
 
 build_script:
-    - cmake . --build
+    - cmake --build .
 
 test_script:
-    - ctest -C %CONFIGURATION%
+    - ctest --config %CONFIGURATION%
 
